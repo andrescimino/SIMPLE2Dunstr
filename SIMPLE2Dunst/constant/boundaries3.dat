@@ -1,0 +1,24 @@
+bottom_wall
+{
+	type		wall;
+	nFaces		3;
+	startFace	10;
+}
+right_outlet
+{
+	type		poutlet;
+	nFaces		2;
+	startFace	13;
+}
+top_wall
+{
+	type		wall;
+	nFaces		3;
+	startFace	15;
+}
+left_inlet
+{
+	type		vinlet;
+	nFaces		2;
+	startFace	18;
+}

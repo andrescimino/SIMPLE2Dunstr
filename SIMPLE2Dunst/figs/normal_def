@@ -1,0 +1,15 @@
+﻿\begin{tikzpicture}[]
+%celda j
+\draw (0,0) -- (2,2)--++(-1.5,1)--++(-1.5, -0.5)--++(0.,-1) --cycle;
+\draw[fill=red!20](.3,1.8) circle [radius=0.1] node [above] {$C_{j}$};
+% celda j+1
+\draw (0,0) -- (2,2)--++(1.5,0)--++(1, -1.5)--++(-1.5,-1) --cycle;
+\draw[fill=red!20](2.7,0.8) circle [radius=0.1] node [above] {$C_{j+1}$};
+%verticei
+\draw[fill=blue!20](0,0) circle [radius=0.1] node [left] {$v_i$};
+\draw[fill=blue!20](2,2) circle [radius=0.1] node [above] {$v_{i+1}$};
+%vectores normales y tangentes a la cara
+\draw[red, -latex] (1,1)--++(0.5,0.5) node [right]  {$\hat{t_i}$};
+\draw[blue, -latex] (1,1)--++(0.5,-0.5) node [below]  {$\hat{n_i}$};
+
+\end{tikzpicture}

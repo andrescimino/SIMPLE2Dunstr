@@ -1,0 +1,65 @@
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   nonuniform List<scalar>
+9
+(
+1.1
+2.2
+3.2
+4.2
+5.2
+6.2
+7.2
+8.2
+9.2
+)
+;
+boundaryField
+{
+    bottom_wall
+    {
+        type           zeroGradient;
+        value            nonuniform List<scalar>
+3
+(
+3
+4
+5
+)
+;       
+    }
+    left_inlet
+    {
+        type            zeroGradient;
+        value            nonuniform List<scalar>
+2
+(
+4.1
+4.2
+)
+;
+    }
+    top_wall
+    {
+        type            zeroGradient;
+        value            nonuniform List<scalar>
+3
+(
+3.1
+4.2
+5.3
+)
+;
+    }
+
+    right_outlet
+    {
+        type            fixedValue;
+        value           uniform 0.5;
+    }
+
+}
+
+// ************************************************************************* //

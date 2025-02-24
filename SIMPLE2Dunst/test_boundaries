@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar  5 18:25:31 2024
+
+@author: sebastian
+"""
+import data_struc as ds
+import numpy as np
+
+boundaries_file="boundaries3.dat"
+
+fboundaries=open(boundaries_file, 'r')
+boundaries=fboundaries.readlines()
+
+fboundaries.close()
+
+boundaries=[data.strip(" |\n").split("\t") for data in boundaries]
+
+#boundaries=[[ print(boundaries.index(item), item.index(i))  for i in item if len(i)==0] for item in boundaries]
+#boundaries=[[ item.remove(i)  for i in item if len(i)==0] for item in boundaries]
+#boundaries=[[ print("hola")  for ix in item ] for item in boundaries]
+boundaries=[ [i for i in item if len(i)!=0] for item in boundaries ]
+boundaries=[ item for item in boundaries if item !=['{']  ] 
+boundaries=[ item for item in boundaries if item !=['}']  ] 
+
+
+#boundaries=[[ remove('') for i in item] if len(item)>1 else '' for item in boundaries]
+
+n_boundaries=len(boundaries)//4
+bound_list=[]
+
+for i in range(n_boundaries):
+    name=boundaries[i*4][0]
+    startface=int(boundaries[3+i*4][1])
+    nfaces=int(boundaries[2+i*4][1])
+    ifaces=np.arange(startface, startface+nfaces)
+    Type=boundaries[1+4*i][1]
+    bound_list.append(ds.boundary(Type, ifaces, name))
+    

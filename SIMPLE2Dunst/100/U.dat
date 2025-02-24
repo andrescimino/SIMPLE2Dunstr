@@ -1,0 +1,32 @@
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    bottom_wall
+    {
+        type            noSlip;
+    }
+
+    left_inlet
+    {
+        type            fixedValue;
+        value           uniform (1 0 0);
+    }
+
+    right_outlet
+    {
+        type            zeroGradient;
+    }
+
+    top_wall
+    {
+        type            noSlip;
+    }
+
+}
+
+// ************************************************************************* //
